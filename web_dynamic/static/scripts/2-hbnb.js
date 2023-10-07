@@ -1,14 +1,16 @@
 $(document).ready(function () {
-  const nameAmenity = [];
+  const amenityName = [];
+
   $('input:checkbox').click(function () {
     if ($(this).is(':checked')) {
-      nameAmenity.push($(this).attr('data-name'));
+      amenityName.push($(this).attr('data-name'));
     } else {
-      const nameIndex = nameAmenity.indexOf($(this).attr('data-name'));
-      nameAmenity.splice(nameIndex, 1);
+      const indexName = amenityName.indexOf($(this).attr('data-name'));
+      amenityName.splice(indexName, 1);
     }
-    $('.amenities h4').text(nameAmenity.join(', '));
+    $('.amenities h4').text(amenityName.join(', '));
   });
+
   $.get('http://0.0.0.0:5001/api/v1/status/', data => {
     if (data.status == 'OK') {
       $('DIV#api_status').addClass('available');
