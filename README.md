@@ -3,6 +3,13 @@
 # AirBnB clone v4
 
 AirBnB clone v4 is an enhanced version of the [previous iteration](https://github.com/yousafesaeed/AirBnB_clone_v3), introducing new functionalities and improvements.
+Like its predecessor, it retains the command-line interface and utilizes object-oriented programming to efficiently manage data. However, in this version, the project expands its capabilities with the following new features:
+
+- **Dynamic web pages using jQuery**: AirBnB clone v4 now features dynamic web pages, which provide a more user-friendly and engaging experience than the static web pages of the previous version. jQuery is used to facilitate seamless interaction between the user and the application, allowing for real-time updates and feedback.
+- **Caching for improved performance**: Caching is now utilized to reduce the number of database queries that need to be executed, resulting in improved performance. This is especially beneficial for complex applications with large amounts of data.
+- **uuid library for enhanced security**: The uuid library is now used to generate unique identifiers for database records, web pages, and other objects. This enhances the overall security of the application by preventing collisions and unauthorized access.
+
+Overall, AirBnB clone v4 provides a more user-friendly, efficient, and secure platform for managing accommodations.
 
 ## Table of Contents
 
