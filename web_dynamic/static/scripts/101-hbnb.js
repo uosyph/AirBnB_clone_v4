@@ -11,7 +11,7 @@ $(document).ready(function () {
   });
 
   // Update element with selected locations (states and cities)
-  function updateLocations(states, cities) {
+  function updateLocations (states, cities) {
     const locations = Object.assign({}, states, cities);
     if (Object.values(locations).length === 0) {
       $('.locations h4').html('&nbsp;');
@@ -54,7 +54,7 @@ $(document).ready(function () {
   });
 
   // Display each place that matches the filters
-  function search(filters = {}) {
+  function search (filters = {}) {
     $.ajax({
       type: 'POST',
       url: `http://${HOST}:5001/api/v1/places_search`,
@@ -78,7 +78,7 @@ $(document).ready(function () {
                       ${place.description}
                     </div>
                     <div class="reviews">
-                      <h2>Reviews <span class="reviewSpan" data-id="${place.id}">show</span></h2>
+                      <h2>Reviews <span class="review" data-id="${place.id}">show</span></h2>
                       <ul>
                       </ul>
                     </div>
@@ -102,7 +102,7 @@ $(document).ready(function () {
   search();
 
   // Show/hide reviews
-  $(document).on('click', '.reviewSpan', function (event) {
+  $(document).on('click', '.review', function (event) {
     const placeId = $(this).attr('data-id');
     const $reviewsList = $(this).closest('.reviews').find('ul');
 
