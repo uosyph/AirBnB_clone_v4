@@ -1,6 +1,6 @@
 $(document).ready(function () {
   const amenityName = [];
-  
+
   $('input:checkbox').click(function () {
     if ($(this).is(':checked')) {
       amenityName.push($(this).attr('data-name'));
