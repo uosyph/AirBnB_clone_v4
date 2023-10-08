@@ -1,7 +1,7 @@
 $(document).ready(function () {
   const HOST = 'localhost';
 
-  // Get api status
+  // Get API status
   $.get(`http://${HOST}:5001/api/v1/status/`, data => {
     if (data.status == 'OK') {
       $('DIV#api_status').addClass('available');
@@ -10,7 +10,7 @@ $(document).ready(function () {
     }
   });
 
-  // Update h2 tag with selected locations (states and cities)
+  // Update element with selected locations (states and cities)
   function updateLocations (states, cities) {
     const locations = Object.assign({}, states, cities);
     if (Object.values(locations).length === 0) {
@@ -20,7 +20,7 @@ $(document).ready(function () {
     }
   }
 
-  // Obtain selected states
+  // Get selected states
   const states = {};
   $('.locations ul h2 input[type="checkbox"]').click(function () {
     if ($(this).is(':checked')) {
@@ -31,7 +31,7 @@ $(document).ready(function () {
     updateLocations(states, cities);
   });
 
-  // Obtain selected cities
+  // Get selected cities
   const cities = {};
   $('.locations ul ul li input[type="checkbox"]').click(function () {
     if ($(this).is(':checked')) {
@@ -42,7 +42,7 @@ $(document).ready(function () {
     updateLocations(states, cities);
   });
 
-  // Obtain selected amenities
+  // Get selected amenities
   const amenities = {};
   $('.amenities input[type="checkbox"]').click(function () {
     if ($(this).is(':checked')) {
@@ -93,6 +93,6 @@ $(document).ready(function () {
     search(filters);
   });
 
-  // Display all places when the website is launched
+  // Display all places when the page is loaded
   search();
 });

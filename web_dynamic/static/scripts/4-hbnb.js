@@ -1,6 +1,6 @@
 $(document).ready(function () {
+  // Get amenities
   const amenityName = {};
-
   $('input:checkbox').click(function () {
     if ($(this).is(':checked')) {
       amenityName[$(this).attr('data-id')] = $(this).attr('data-name');
@@ -10,6 +10,7 @@ $(document).ready(function () {
     $('.amenities h4').text(Object.values(amenityName).join(', '));
   });
 
+  // Get API status
   $.get('http://localhost:5001/api/v1/status/', data => {
     if (data.status == 'OK') {
       $('DIV#api_status').addClass('available');
@@ -18,6 +19,7 @@ $(document).ready(function () {
     }
   });
 
+  // Display each place that matches the filters
   const search = (filters = {}) => {
     $.ajax({
       type: 'POST',
@@ -46,6 +48,7 @@ $(document).ready(function () {
     });
   };
 
+  // Search event with selected filters
   $('#search').click(function () {
     const filters = { amenities: Object.keys(amenityName) };
     search(filters);
