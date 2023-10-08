@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Starts a Flash Web Application """
+"""Starts a Flask Web Application"""
 from models import storage
 from models.state import State
 from models.city import City
@@ -15,13 +15,24 @@ app = Flask(__name__)
 
 @app.teardown_appcontext
 def close_db(error):
-    """ Remove the current SQLAlchemy Session """
+    """Closes the database storage connection."""
     storage.close()
 
 
 @app.route('/100-hbnb', strict_slashes=False)
 def hbnb():
-    """ HBNB is alive! """
+    """
+    This route displays a webpage with information about HBNB.
+    It retrieves all states, amenities, and places from the database,
+    sorts them alphabetically, and renders them in the template 100-hbnb.html.
+
+    Returns:
+        A rendered template '100-hbnb.html' with the following arguments:
+        - states: a list of states and their associated cities
+        - amenities: a list of amenities
+        - places: a list of places
+        - cache_id: a unique identifier generated using uuid.uuid4()
+    """
     states = storage.all(State).values()
     states = sorted(states, key=lambda k: k.name)
     st_ct = []
