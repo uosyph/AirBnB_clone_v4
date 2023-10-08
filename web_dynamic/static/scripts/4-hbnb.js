@@ -1,12 +1,13 @@
 $(document).ready(function () {
-  const nameAmenity = {};
+  const amenityName = {};
+
   $('input:checkbox').click(function () {
     if ($(this).is(':checked')) {
-      nameAmenity[$(this).attr('data-id')] = $(this).attr('data-name');
+      amenityName[$(this).attr('data-id')] = $(this).attr('data-name');
     } else {
-      delete nameAmenity[$(this).attr('data-id')];
+      delete amenityName[$(this).attr('data-id')];
     }
-    $('.amenities h4').text(Object.values(nameAmenity).join(', '));
+    $('.amenities h4').text(Object.values(amenityName).join(', '));
   });
 
   $.get('http://localhost:5001/api/v1/status/', data => {
@@ -22,7 +23,6 @@ $(document).ready(function () {
       type: 'POST',
       url: 'http://localhost:5001/api/v1/places_search',
       data: JSON.stringify(filters),
-      // dataType: 'json',
       contentType: 'application/json',
       success: function (data) {
         $('SECTION.places').empty();
@@ -47,7 +47,7 @@ $(document).ready(function () {
   };
 
   $('#search').click(function () {
-    const filters = { amenities: Object.keys(nameAmenity) };
+    const filters = { amenities: Object.keys(amenityName) };
     search(filters);
   });
 
