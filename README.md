@@ -2,7 +2,7 @@
 
 # AirBnB clone v4
 
-AirBnB clone v4 is an enhanced version of the [previous iteration](https://github.com/yousafesaeed/AirBnB_clone_v3), introducing new functionalities and improvements.
+AirBnB clone v4 is an enhanced version of the [previous iteration](https://github.com/uosyph/AirBnB_clone_v3), introducing new functionalities and improvements.
 Like its predecessor, it retains the command-line interface and utilizes object-oriented programming to efficiently manage data. However, in this version, the project expands its capabilities with the following new features:
 
 - **Dynamic web pages using jQuery**: AirBnB clone v4 now features dynamic web pages, which provide a more user-friendly and engaging experience than the static web pages of the previous version. jQuery is used to facilitate seamless interaction between the user and the application, allowing for real-time updates and feedback.
@@ -60,7 +60,7 @@ Start using the console
 Clone the repository:
 
 ```bash
-git clone https://github.com/yousafesaeed/AirBnB_clone_v4
+git clone https://github.com/uosyph/AirBnB_clone_v4
 ```
 
 Move in to the directory:
@@ -195,6 +195,6 @@ AirBnB_clone$
 
 ## Author
 
-[Yousef Saeed](https://github.com/yousafesaeed)
+[Yousef Saeed](https://github.com/uosyph)
 
 <p align="right"><a href="#readme-top">Back to Top</a></p>
